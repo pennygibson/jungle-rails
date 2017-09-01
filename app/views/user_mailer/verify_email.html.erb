@@ -7,7 +7,16 @@
     <h1>Thank you for your order</h1>
     <p>
       Your order has been recieved and is being processed.<br>
+
+     <% @order.line_items.each do |item| %>
+       <%= item.product.name %>
+       <%= item.item_price_cents %>
+       <%= item.quantity %>
+       <%= item.total_price_cents %>
+     <% end %>
+
     </p>
+
 
     <p>Thanks for shopping with us and have a great day!</p>
   </body>

@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
   def show
-    if
+
   end
 
   def add_item

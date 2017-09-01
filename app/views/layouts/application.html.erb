@@ -9,12 +9,20 @@
 <body>
 
   <%= render 'layouts/top_nav' %>
+<div class="log_links pull-right">
 <% if current_user%>
-    <%= link_to "Logout", '/logout' %>
+  <p class="login_logout">
+   <%= link_to "Logout", '/logout' %>
+   </p>
+
   <% else%>
-    <%= link_to "Login", '/login' %>
+
+   <p class="login_logout"> <%= link_to "Login", '/login' %>
     <%= link_to "Register", '/signup' %>
+    </p>
+
   <% end %>
+  </div>
 
 
 
