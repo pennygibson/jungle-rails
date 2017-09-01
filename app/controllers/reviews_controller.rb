@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review.save
 
     if @review.save
-      redirect_to [:products], notice: 'Product created!'
+      redirect_to [:products], notice: 'Review created!'
     # else
     #   render :new
     end
