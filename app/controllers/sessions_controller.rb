@@ -17,6 +17,19 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create
+  if user = User.authenticate_with_credentials(params[:email], params[:password])
+     session[:user_id] = user.id
+     redirect_to '/'
+    # success logic, log them in
+  else
+    # failure, render login form
+    flash.now[:alert] = "invalid login/password combination"
+    redirect_to '/login'
+
+  end
+end
+
   def destroy
     session[:user_id] = nil
     redirect_to '/login'
